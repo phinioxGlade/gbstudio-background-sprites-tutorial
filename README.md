@@ -1,5 +1,8 @@
 # GB Studio 3.0.3 Background Sprites Tutorial
+![Alt text](/help/BackgroundSprites-2.4.gif "Example")
+
 Interactive GB Studio 3.0.3 tutorial for rendering background tiles in front of sprites
+
 
 Lessons:
 1. How to setup a sprite to render behind background tiles
