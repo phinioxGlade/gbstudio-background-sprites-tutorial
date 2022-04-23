@@ -13,6 +13,7 @@ Interactive GB Studio 3.0.3 tutorial for rendering background tiles in front of 
 
 ### Concepts:
 1. Animation States and Sub-Status
-3. Related Sprite Editor features
+2. Related Sprite Editor features
+3. Builds off https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial 
 
 Enjoy :)
