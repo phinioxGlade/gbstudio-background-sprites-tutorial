@@ -1,20 +1,26 @@
 # GB Studio 3.0.3 Background Sprites Tutorial
-![Alt text](/help/BackgroundSprites-2.4.gif "Example")
+![](/help/BackgroundSprites-2.4.gif "Example")
 
 Interactive GB Studio 3.0.3 tutorial for rendering background tiles in front of sprites
 
+### Tutorials
+
+[1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)<br/>
+[2.0 - Background Sprites](https://github.com/phinioxGlade/gbstudio-background-sprites-tutorial)
 
 ### Lessons:
-1. How to setup a sprite to render behind background tiles
-2. How transparency is handled
-3. Use of triggers to toggle player sprite in front of and behind background tiles
-4. Simulating additional layers
-5. Animating background tiles to hide the transition between sprites in front of and behind background tiles
+
+[2.0 - How to setup a sprite to render behind background tiles](#lesson-20---how-to-setup-a-sprite-to-render-behind-background-tiles)<br/>
+[2.1 - How transparency is handled](#lesson-21---how-transparency-is-handled)<br/>
+[2.2 - Use of triggers to toggle player sprite in front of and behind background tiles](#lesson-22---use-of-triggers-to-toggle-player-sprite-in-front-of-and-behind-background-tiles)<br/>
+[2.3 - Simulating additional layers](#lesson-23---simulating-additional-layers)<br/>
+2.4 - Animating background tiles to hide the transition between sprites in front of and behind background tiles
 
 ### Concepts:
+
 1. Animation States
 2. Related Sprite Editor features
-3. Builds off https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial 
+3. Builds off concepts from my previous [GB Studio 3.0.3 - Tutorial 1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)
 
 Enjoy :)
 
@@ -28,12 +34,14 @@ Each sub-sprite within animation frame can be independently set to render behind
 GBS3 provides the Sprite Editor for configuring sprite sheets.
 
 #### How-to edit a Sprite
+
 From the Game World section:
 1. Expand the "Game World" drop down list in the top left under the File Edit menu
 2. Then select "Sprites" to open the Sprite Editor
 3. Find the sprite you want to edit, this part of tutorial we will focus on the *player_platform* sprite
 
 #### Animation States and Sub-States
+
 Each sprite is made up of animation states. These states are made up of sub-states based on the "Animation Type". 
 *player_platform* is of type "Platformer Player", which consists of:
 
@@ -45,16 +53,19 @@ Each sprite is made up of animation states. These states are made up of sub-stat
 GBS studio allows you to mirror Left/Right animations and this is checked by default.
 
 #### Creating a new Animation State
+
 To create a new animation state, click the "+" button next to the ANIMATIONS heading.
 New states default to the "Fixed Direction" animation type, with only the Idle sub-state.
 To get the additional sub-stats, change the type to "Platformer Player".
 Its recommended that you also rename state so its easier reference, in this tutorial it was renamed to "behind"
 
 #### Recreating the Animations
+
 Currently GBS lacks a clone animation state/sub-status feature, so you will need to manually recreate all the animation frames.
 This is done my dragging tiles from the sprite sheet into the animation frame and repeating for all frame you want to recreate.
 
 #### Set sprites to display behind background layer
+
 Once the animation has been recreated, the final step is setting which parts of the actor will be "Display behind background layer".
 As mentioned previous each sub-sprite can be independently set to render behind the background layer, in this tutorial we made the entire frame to behind:
 
@@ -63,9 +74,100 @@ As mentioned previous each sub-sprite can be independently set to render behind 
 3. Repeat for each frame of animation and all the sub-states
 
 #### Using the "behind" Animation State
+
 Now the sprite is built. We just need to set the Animation State.
 Add the event "Set Actor Animation State", in this example to the Scene "On Init", and set Player's state to "behind".
 You can do this for any actor, no just the Player.
 Use the same event to swap back to "Default" animation state, we will discuss this further in next part of the lesson.
+
+### Lesson 2.1 - How transparency is handled
+
+<img src="/help/lesson-2-1-0.gif" style="width: 320px;" />
+
+When your designing your artwork for sprites behind the background layer, there is the transparent shade.
+
+This is assigned to the lightest/white shade.
+
+So light green, dark green and black all render in front of the sprite.
+
+You need to keep this in mind when creating backgrounds to avoid unwanted overlap.
+
+You can change the which shade is transparent, but requires [NalaFala (Yousurname)'s plug-in](https://github.com/Y0UR-U5ERNAME/gbs-plugin-collection/tree/main/plugins/setPaletteColorsPlugin/events) or GBVM scripting (presumed GBVM has this a feature). This will be covered in a future tutorial.
+
+### Lesson 2.2 - Use of triggers to toggle player sprite in front of and behind background tiles
+
+<img src="/help/lesson-2-2-0.png" style="width: 320px;" />
+
+In this basic example we will toggle the player's animation state between sprites in-front of background tiles and spirtes behind background tiles.
+
+In this instance we have added a trigger which overs the brick pilar.
+
+Trigger's "On Enter" has the event "Set Actor Animation State", which sets the player's the state to "behind".
+
+<img src="/help/lesson-2-2-1.png" style="width: 320px;" />
+
+Trigger's "On Leave" does the reverse. Its swaps the state back to "Default".
+
+<img src="/help/lesson-2-2-2.png" style="width: 320px;" />
+
+This is done so the player is only behind while obscured by the pilar.
+
+<img src="/help/lesson-2-2-3.gif" style="width: 320px;" />
+
+To avoid noticable pop when the states are swapped we have empty tiles either side of the pilar. This needs to be size of your player sprite, hence two transparent tiles left and right. 
+
+### Lesson 2.3 - Simulating additional layers
+
+<img src="/help/lesson-2-3-scene.png" style="width: 320px;" />
+
+The Gameboy is limited to just two layers:
+
+1. The background tiles
+2. The sprites
+
+But what if you wanted three layers?
+
+Well, you can achieve this affect by carefully mixing sprites rendered in front of and behind the background layer.
+
+We have already shown that triggers can be used to toggle player sprite behind but you can also do this for any sprite.
+
+#### Background Layer
+
+<img src="/help/lesson-2-3-1.gif" style="width: 320px;" />
+
+Lets add a spaceship.
+
+Which we want to be on the furtherest layer back. Set its state to *behind*.
+
+![](/help/lesson-2-3-spaceship-background-animation-state.png "Spaceship-Background Animation State Event")
+
+#### Middle Ground Layer
+
+<img src="/help/lesson-2-3-2.gif" style="width: 320px;" />
+
+Next lets make a middle ground layer.
+
+Add another spaceship.
+
+Add logic to the actor's *On Update* so that if the actor is between X 15 and X 19, set the state to behind.
+
+<img src="/help/lesson-2-3-4.png" style="width: 640px;" />
+
+*The example in the tutorial is incomplete and doesn't always work as intended. The spaceship movenment script would need to be adjusted to better incorporate the layer change*
+
+#### Foreground Layer
+
+<img src="/help/lesson-2-3-5.gif" style="width: 320px;" />
+
+You could add a forth layer with sprites in front of the foreground pilar.
+
+#### Concussion
+
+Now we have 3 psuedo layers:
+1. Spaceship always behind
+2. Spaceship that toggles state using logic
+3. Pilar in front of all sprites
+
+The amount of simulated layers is upto your creativity, coding skills and choice artwork.
 
 ## Currently the rest of the lesson is only available within the source code
