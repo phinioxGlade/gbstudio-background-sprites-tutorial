@@ -14,7 +14,7 @@ Interactive GB Studio tutorial for rendering background tiles in front of sprite
 - [2.1 - How transparency is handled](#lesson-21---how-transparency-is-handled)
 - [2.2 - Use of triggers to toggle player sprite in front of and behind background tiles](#lesson-22---use-of-triggers-to-toggle-player-sprite-in-front-of-and-behind-background-tiles)
 - [2.3 - Simulating additional layers](#lesson-23---simulating-additional-layers)
-- 2.4 - Animating background tiles to hide the transition between sprites in front of and behind background tiles
+- [2.4 - Animating background tiles to hide the transition between sprites in front of and behind background tiles](#24---animating-background-tiles-to-hide-the-transition-between-sprites-in-front-of-and-behind-background-tiles)
 
 ### Concepts:
 
@@ -161,7 +161,7 @@ Add logic to the actor's *On Update* so that if the actor is between X 15 and X 
 
 <img src="/help/lesson-2-3-4.png" style="width: 640px;" />
 
-*The example in the tutorial is incomplete and doesn't always work as intended. The spaceship movenment script would need to be adjusted to better incorporate the layer change*
+*The example in the tutorial is incomplete and doesn't always work as intended. The spaceship movement script would need to be adjusted to better incorporate the layer change*
 
 #### Foreground Layer
 
@@ -177,5 +177,26 @@ Now we have 3 psuedo layers:
 3. Pilar in front of all sprites
 
 The amount of simulated layers is upto your creativity, coding skills and choice artwork.
+
+## 2.4 - Animating background tiles to hide the transition between sprites in front of and behind background tiles
+
+![](/help/BackgroundSprites-2.4.gif "Example")
+
+For the final part of the lesson, we will be using animated tiles to mask the transition between sprite states to create hidden path.
+
+The code for animating tiles was covered in my [Animated Tiles Tutorial](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial) available on Github. We will not be explaining the GBVM scripting required.
+
+![](/help/lesson-2-4-frames.png "Tile Animation Frames")
+
+Above is 8 frames of the animations. We will reuse the first 4 frames for both the dark and very dark end tiles.
+
+This is the basic concept:
+
+1. Initialize the hidden path by setting actors behind and swapping background tiles to their foreground version (GBVM scripting)
+2. Add a trigger within the foreground wall which sets the actor sprite states to "behind" and begin the animated transition (GBVM scripting)
+3. The animation is handled using the "On Update" of the orb actor, a Timer event might be a better choice
+4. When the animation reaches the frame 5, set the states to "Default"
+5. When the animation reaches the frame 8, stop animation
+6. Add a second trigger with the reverse logic to hide the path
 
 ## Currently the rest of the lesson is only available within the source code
