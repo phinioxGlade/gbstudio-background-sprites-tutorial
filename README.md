@@ -3,18 +3,18 @@
 
 Interactive GB Studio tutorial for rendering background tiles in front of sprites. The source code was built using with GBS 3.0.3.
 
-### GB Studio Tutorials
+### GB Studio Tutorials:
 
-[1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)<br/>
-[2.0 - Background Sprites](https://github.com/phinioxGlade/gbstudio-background-sprites-tutorial) &lt; This Tutorial
+- [1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)
+- [2.0 - Background Sprites](https://github.com/phinioxGlade/gbstudio-background-sprites-tutorial) &lt; This Tutorial
 
 ### Lessons:
 
-[2.0 - How to setup a sprite to render behind background tiles](#lesson-20---how-to-setup-a-sprite-to-render-behind-background-tiles)<br/>
-[2.1 - How transparency is handled](#lesson-21---how-transparency-is-handled)<br/>
-[2.2 - Use of triggers to toggle player sprite in front of and behind background tiles](#lesson-22---use-of-triggers-to-toggle-player-sprite-in-front-of-and-behind-background-tiles)<br/>
-[2.3 - Simulating additional layers](#lesson-23---simulating-additional-layers)<br/>
-2.4 - Animating background tiles to hide the transition between sprites in front of and behind background tiles
+- [2.0 - How to setup a sprite to render behind background tiles](#lesson-20---how-to-setup-a-sprite-to-render-behind-background-tiles)
+- [2.1 - How transparency is handled](#lesson-21---how-transparency-is-handled)
+- [2.2 - Use of triggers to toggle player sprite in front of and behind background tiles](#lesson-22---use-of-triggers-to-toggle-player-sprite-in-front-of-and-behind-background-tiles)
+- [2.3 - Simulating additional layers](#lesson-23---simulating-additional-layers)
+- 2.4 - Animating background tiles to hide the transition between sprites in front of and behind background tiles
 
 ### Concepts:
 
@@ -25,11 +25,11 @@ Interactive GB Studio tutorial for rendering background tiles in front of sprite
 
 Enjoy :)
 
-### Useful Resources
+### Useful Resources:
 
-- [GBVM source file](https://github.com/untoxa/gbvm/blob/master/include/vm.i)<br/>
-- [GBVM Command Reference](https://gist.github.com/pau-tomas/92b0ad77506088d184a654af226f5b7d)<br/>
-- [GB Studio Central - Understanding GBVM](https://github.com/untoxa/gbvm/blob/master/include/vm.i)<br/>
+- [GBVM source file](https://github.com/untoxa/gbvm/blob/master/include/vm.i)
+- [GBVM Command Reference](https://gist.github.com/pau-tomas/92b0ad77506088d184a654af226f5b7d)
+- [GB Studio Central - Understanding GBVM](https://github.com/untoxa/gbvm/blob/master/include/vm.i)
 - [GB Studio Plug-In Database](https://docs.google.com/spreadsheets/d/1d2F5hSEMt6nkacw-qVnYlT3IPHqmCCaLFhRboC5xxc0/edit#gid=0)
 
 ### Lesson 2.0 - How to setup a sprite to render behind background tiles
