@@ -1,7 +1,7 @@
-# GB Studio 3.0.3 Background Sprites Tutorial
+# GB Studio Tutorial - Background Sprites 
 ![](/help/BackgroundSprites-2.4.gif "Example")
 
-Interactive GB Studio tutorial for rendering background tiles in front of sprites. The source code was built using with GBS 3.0.3.
+Interactive GB Studio tutorial for rendering background tiles in front of sprites. The source code was built using with GBS 3.0.3. Enjoy :)
 
 ### GB Studio Tutorials:
 
@@ -18,12 +18,10 @@ Interactive GB Studio tutorial for rendering background tiles in front of sprite
 
 ### Concepts:
 
-1. Animation States and Frames 
-2. How an actor is contructed
-3. Related Sprite Editor features
-4. Builds off concepts from my previous [GB Studio 3.0.3 - Tutorial 1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)
-
-Enjoy :)
+- Animation States and Frames 
+- How an actor is contructed
+- Related Sprite Editor features
+- Builds off concepts from my previous [GB Studio 3.0.3 - Tutorial 1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)
 
 ### Useful Resources:
 
