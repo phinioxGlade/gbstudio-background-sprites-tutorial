@@ -1,12 +1,12 @@
 # GB Studio 3.0.3 Background Sprites Tutorial
 ![](/help/BackgroundSprites-2.4.gif "Example")
 
-Interactive GB Studio 3.0.3 tutorial for rendering background tiles in front of sprites
+Interactive GB Studio tutorial for rendering background tiles in front of sprites. The source code was built using with GBS 3.0.3.
 
-### Tutorials
+### GB Studio Tutorials
 
 [1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)<br/>
-[2.0 - Background Sprites](https://github.com/phinioxGlade/gbstudio-background-sprites-tutorial)
+[2.0 - Background Sprites](https://github.com/phinioxGlade/gbstudio-background-sprites-tutorial) &lt; This Tutorial
 
 ### Lessons:
 
@@ -18,11 +18,19 @@ Interactive GB Studio 3.0.3 tutorial for rendering background tiles in front of 
 
 ### Concepts:
 
-1. Animation States
-2. Related Sprite Editor features
-3. Builds off concepts from my previous [GB Studio 3.0.3 - Tutorial 1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)
+1. Animation States and Frames 
+2. How an actor is contructed
+3. Related Sprite Editor features
+4. Builds off concepts from my previous [GB Studio 3.0.3 - Tutorial 1.0 - Animated Tiles](https://github.com/phinioxGlade/gbstudio-3-animated-tile-tutorial)
 
 Enjoy :)
+
+### Useful Resources
+
+- [GBVM source file](https://github.com/untoxa/gbvm/blob/master/include/vm.i)<br/>
+- [GBVM Command Reference](https://gist.github.com/pau-tomas/92b0ad77506088d184a654af226f5b7d)<br/>
+- [GB Studio Central - Understanding GBVM](https://github.com/untoxa/gbvm/blob/master/include/vm.i)<br/>
+- [GB Studio Plug-In Database](https://docs.google.com/spreadsheets/d/1d2F5hSEMt6nkacw-qVnYlT3IPHqmCCaLFhRboC5xxc0/edit#gid=0)
 
 ### Lesson 2.0 - How to setup a sprite to render behind background tiles
 
@@ -92,7 +100,7 @@ So light green, dark green and black all render in front of the sprite.
 
 You need to keep this in mind when creating backgrounds to avoid unwanted overlap.
 
-You can change the which shade is transparent, but requires [NalaFala (Yousurname)'s plug-in](https://github.com/Y0UR-U5ERNAME/gbs-plugin-collection/tree/main/plugins/setPaletteColorsPlugin/events) or GBVM scripting (presumed GBVM has this a feature). This will be covered in a future tutorial.
+You can change the which shade is transparent, but requires [NalaFala (Yousurname)'s plug-in](https://github.com/Y0UR-U5ERNAME/gbs-plugin-collection/tree/main/plugins/setPaletteColorsPlugin/events) or GBVM scripting (presumed GBVM has this feature). This will be covered in a future tutorial.
 
 ### Lesson 2.2 - Use of triggers to toggle player sprite in front of and behind background tiles
 
